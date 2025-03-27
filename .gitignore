@@ -1,4 +1,9 @@
 node_modules
+amnesty-app/node_modules
+amnesty-app/.next
+amnesty-app/out
+out
+.next
 amnesty-app/out
 amnesty-app/.next
 package-lock.json
