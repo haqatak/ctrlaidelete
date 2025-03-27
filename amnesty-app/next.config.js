@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    unoptimized: true,
-  },
+  distDir: '.next',
   trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
@@ -10,8 +8,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // Ensuring all routes work in static export
-  distDir: 'out',
 };
 
 module.exports = nextConfig;
