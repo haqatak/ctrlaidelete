@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useSwipe } from '@/hooks/swipe/useSwipe';
 import { Question } from '@/lib/data/types';
 import { allQuestions } from '@/lib/data/questions';
@@ -13,6 +13,10 @@ export default function QuestionScreen() {
   const [responses, setResponses] = useState<{questionId: number, agree: boolean}[]>([]);
   const [isAnimating, setIsAnimating] = useState(false);
   const [animationDirection, setAnimationDirection] = useState<'left' | 'right' | null>(null);
+  const [isEntering, setIsEntering] = useState(true);
+  const [swipePosition, setSwipePosition] = useState(0);
+  const [isActivelyDragging, setIsActivelyDragging] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
   
   // Initialize with a balanced selection of questions
   useEffect(() => {
@@ -20,6 +24,21 @@ export default function QuestionScreen() {
     const selectedQuestions = getBalancedQuestions(8);
     setQuestions(selectedQuestions);
   }, []);
+
+  // Add entrance animation when a new question appears
+  useEffect(() => {
+    if (questions.length > 0) {
+      // Start with entering animation
+      setIsEntering(true);
+      
+      // Remove entering class after animation completes
+      const timer = setTimeout(() => {
+        setIsEntering(false);
+      }, 400);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [currentQuestionIndex, questions]);
 
   // Function to get a balanced set of questions that cover different dimensions
   const getBalancedQuestions = (count: number): Question[] => {
@@ -108,6 +127,10 @@ export default function QuestionScreen() {
     setAnimationDirection(agree ? 'right' : 'left');
     setIsAnimating(true);
     
+    // Reset swipe position
+    setSwipePosition(0);
+    setIsActivelyDragging(false);
+    
     // Record response
     const newResponse = {
       questionId: currentQuestion.id,
@@ -160,7 +183,100 @@ export default function QuestionScreen() {
     return [...userResponses, ...additionalResponses];
   };
   
-  // Set up swipe handlers correctly
+  // Custom touch handlers for real-time dragging
+  const handleCustomTouchStart = (e: React.TouchEvent) => {
+    if (isAnimating) return;
+    setIsActivelyDragging(true);
+    setSwipePosition(0);
+  };
+  
+  const handleCustomTouchMove = (e: React.TouchEvent) => {
+    if (!isActivelyDragging || isAnimating) return;
+    
+    const touchX = e.touches[0].clientX;
+    const screenWidth = window.innerWidth;
+    const startX = screenWidth / 2; // Assume touch started at center
+    const deltaX = touchX - startX;
+    
+    // Update the card's position with CSS variable
+    setSwipePosition(deltaX);
+    if (cardRef.current) {
+      cardRef.current.style.setProperty('--swipe-x', deltaX.toString());
+    }
+  };
+  
+  const handleCustomTouchEnd = (e: React.TouchEvent) => {
+    if (!isActivelyDragging || isAnimating) return;
+    
+    // Check if the swipe was significant enough to trigger an action
+    const threshold = 100; // Minimum distance to consider it a swipe
+    
+    if (swipePosition < -threshold) {
+      // Swiped left - disagree
+      handleResponse(false);
+    } else if (swipePosition > threshold) {
+      // Swiped right - agree
+      handleResponse(true);
+    } else {
+      // Reset position if swipe wasn't far enough
+      setSwipePosition(0);
+      if (cardRef.current) {
+        cardRef.current.style.setProperty('--swipe-x', '0');
+      }
+    }
+    
+    setIsActivelyDragging(false);
+  };
+  
+  // Similar handlers for mouse events
+  const handleCustomMouseDown = (e: React.MouseEvent) => {
+    if (isAnimating) return;
+    setIsActivelyDragging(true);
+    
+    // Store the starting position in the dataset
+    if (cardRef.current) {
+      cardRef.current.dataset.startX = e.clientX.toString();
+    }
+  };
+  
+  const handleCustomMouseMove = (e: React.MouseEvent) => {
+    if (!isActivelyDragging || isAnimating) return;
+    
+    // Get the starting position
+    const startX = cardRef.current?.dataset.startX ? parseInt(cardRef.current.dataset.startX) : e.clientX;
+    const deltaX = e.clientX - startX;
+    
+    // Update the card's position
+    setSwipePosition(deltaX);
+    if (cardRef.current) {
+      cardRef.current.style.setProperty('--swipe-x', deltaX.toString());
+    }
+  };
+  
+  const handleCustomMouseUp = (e: React.MouseEvent) => {
+    if (!isActivelyDragging || isAnimating) return;
+    
+    // Check if the swipe was significant enough
+    const threshold = 100;
+    
+    if (swipePosition < -threshold) {
+      // Swiped left
+      handleResponse(false);
+    } else if (swipePosition > threshold) {
+      // Swiped right
+      handleResponse(true);
+    } else {
+      // Reset position
+      setSwipePosition(0);
+      if (cardRef.current) {
+        cardRef.current.style.setProperty('--swipe-x', '0');
+      }
+    }
+    
+    setIsActivelyDragging(false);
+  };
+  
+  // Set up swipe handlers (original implementation)
   const { 
     handleTouchStart, 
     handleTouchMove, 
@@ -180,6 +296,19 @@ export default function QuestionScreen() {
   if (!currentQuestion) {
     return <div className="amnesty-container">Loading...</div>;
   }
+  
+  // Determine the correct swipe class
+  const getSwipeClass = () => {
+    if (isAnimating && animationDirection) {
+      return `animate-${animationDirection}`;
+    }
+    
+    if (isActivelyDragging) {
+      return swipePosition < 0 ? 'swiping-left' : swipePosition > 0 ? 'swiping-right' : '';
+    }
+    
+    return '';
+  };
   
   return (
     <div className="amnesty-container">
@@ -201,12 +330,15 @@ export default function QuestionScreen() {
         
         <div className="question-container">
           <div 
-            className={`question-card ${isAnimating ? `animate-${animationDirection}` : ''}`}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-            onMouseDown={handleMouseDown}
-            onMouseUp={handleMouseUp}
+            ref={cardRef}
+            className={`question-card ${getSwipeClass()} ${isEntering ? 'card-enter card-enter-active' : ''}`}
+            onTouchStart={handleCustomTouchStart}
+            onTouchMove={handleCustomTouchMove}
+            onTouchEnd={handleCustomTouchEnd}
+            onMouseDown={handleCustomMouseDown}
+            onMouseMove={handleCustomMouseMove}
+            onMouseUp={handleCustomMouseUp}
+            onMouseLeave={handleCustomMouseUp}
           >
             <div className="question-content">
               <p className="question-text">{currentQuestion.text}</p>
@@ -229,10 +361,10 @@ export default function QuestionScreen() {
             
             <div className="swipe-instructions">
               <div className="swipe-left">
-               
+                
               </div>
               <div className="swipe-right">
-    
+                
               </div>
             </div>
           </div>
