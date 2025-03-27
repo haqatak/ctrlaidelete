@@ -1,4 +1,4 @@
-// File: /Users/haq/dev/amnesty-interactive/amnesty-app/src/app/handling/page.tsx
+// File: /Users/john/Projects/ctrlaidelete/amnesty-app/src/app/handling/page.tsx
 import * as entry from '../../../../src/app/handling/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
