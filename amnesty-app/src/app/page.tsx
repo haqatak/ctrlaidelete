@@ -18,7 +18,7 @@ export default function WelcomeScreen() {
     <div className="amnesty-container">
       <header className="amnesty-header">
         <img 
-          src="/images/amnesty-logo.png" 
+          src="https://amnesty.no/sites/default/files/vedlegg/yellow_logo_print_use.jpg" 
           alt="Amnesty International" 
           className="amnesty-logo"
         />

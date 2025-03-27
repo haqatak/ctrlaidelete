@@ -16,7 +16,7 @@ export default function QuestionScreen() {
   useEffect(() => {
     // Shuffle and select a subset of questions (e.g., 20 questions)
     const shuffled = [...allQuestions].sort(() => 0.5 - Math.random());
-    const selected = shuffled.slice(0, 20);
+    const selected = shuffled.slice(0, 8);
     setQuestions(selected);
   }, []);
 
@@ -85,7 +85,7 @@ export default function QuestionScreen() {
     <div className="amnesty-container">
       <header className="amnesty-header">
         <img 
-          src="/images/amnesty-logo.png" 
+          src="https://amnesty.no/sites/default/files/vedlegg/yellow_logo_print_use.jpg" 
           alt="Amnesty International" 
           className="amnesty-logo"
         />
