@@ -229,12 +229,10 @@ export default function QuestionScreen() {
             
             <div className="swipe-instructions">
               <div className="swipe-left">
-                <span>Uenig</span>
-                <span className="arrow">←</span>
+               
               </div>
               <div className="swipe-right">
-                <span className="arrow">→</span>
-                <span>Enig</span>
+    
               </div>
             </div>
           </div>
