@@ -1,24 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { UserResult, PersonalityType, Dimension, AmnestyCause } from '@/lib/data/types';
-import { personalityTypes } from '@/lib/data/personalityTypes';
-import { dimensions } from '@/lib/data/dimensions';
-import { amnestyCauses } from '@/lib/data/amnestyCauses';
-import { generateUserResult } from '@/lib/data/personalityMatching';
+import { EnhancedUserResult } from '@/lib/data/types';
+import { generateEnhancedUserResult } from '@/lib/data/personalityMatching';
 import SocialSharing from '@/components/ui/SocialSharing';
 
 export default function ResultsScreen() {
-  const [result, setResult] = useState<{
-    userResult: UserResult;
-    personalityType: PersonalityType | undefined;
-    dimensionDetails: Array<{
-      dimension: Dimension | undefined;
-      score: number;
-      description: string | undefined;
-    }>;
-    causes: (AmnestyCause | undefined)[];
-  } | null>(null);
+  const [result, setResult] = useState<EnhancedUserResult | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -29,55 +18,47 @@ export default function ResultsScreen() {
         try {
           const responses = JSON.parse(responsesJson);
           
-          // Generate result using our algorithm
+          // Generate enhanced result using our algorithm
           const sessionId = `session-${Date.now()}`;
-          const userResult = generateUserResult(responses, sessionId);
-          
-          // Get the personality type
-          const matchedPersonality = personalityTypes.find(p => p.id === userResult.personalityTypeId);
+          const enhancedResult = generateEnhancedUserResult(responses, sessionId);
           
           // Store personality name for sharing
-          if (matchedPersonality?.name) {
-            sessionStorage.setItem('personalityName', matchedPersonality.name);
+          if (enhancedResult.personalityType?.name) {
+            sessionStorage.setItem('personalityName', enhancedResult.personalityType.name);
           }
           
-          // Get the recommended causes
-          const recommendedCauses = userResult.recommendedCauses.map(causeId => 
-            amnestyCauses.find(c => c.id === causeId)
-          );
-          
-          // Format dimension details
-          const dimensionDetails = Object.entries(userResult.dimensionScores).map(([dimId, score]) => {
-            const dimension = dimensions.find(d => d.id === Number(dimId));
-            return {
-              dimension,
-              score,
-              description: score > 0 ? dimension?.highDescription : dimension?.lowDescription
-            };
-          });
-          
-          // Sort dimensions by absolute score (highest first)
-          dimensionDetails.sort((a, b) => Math.abs(b.score) - Math.abs(a.score));
-          
-          setResult({
-            userResult,
-            personalityType: matchedPersonality,
-            dimensionDetails,
-            causes: recommendedCauses
-          });
-          
+          setResult(enhancedResult);
         } catch (error) {
           console.error('Error processing results:', error);
         }
       }
-    } else {
-      // Server-side rendering - set default state
-      setResult(null);
+      setIsLoading(false);
     }
   }, []);
 
-  if (!result) {
+  if (isLoading) {
     return <div className="amnesty-container">Laster resultater...</div>;
+  }
+
+  if (!result) {
+    return (
+      <div className="amnesty-container">
+        <div className="error-message">
+          <h2>Kunne ikke laste resultatene</h2>
+          <p>Det oppstod et problem med å beregne resultatene dine. Gå tilbake og prøv igjen.</p>
+          <button 
+            className="nav-button nav-button-primary"
+            onClick={() => {
+              if (typeof window !== 'undefined') {
+                window.location.href = '/sporsmal';
+              }
+            }}
+          >
+            Tilbake til spørsmål
+          </button>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -131,6 +112,30 @@ export default function ResultsScreen() {
                 </div>
               </div>
             ))}
+          </div>
+          
+          <div className="causes-section">
+            <h2 className="results-title">Anbefalte saker for deg</h2>
+            <div className="causes-container">
+              {result.causes.map((cause, index) => (
+                cause && (
+                  <div key={index} className="cause-card">
+                    <h3 className="cause-name">{cause.name}</h3>
+                    <p className="cause-description">{cause.description}</p>
+                    {cause.linkUrl && (
+                      <a 
+                        href={cause.linkUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="cause-link"
+                      >
+                        Les mer
+                      </a>
+                    )}
+                  </div>
+                )
+              ))}
+            </div>
           </div>
           
           <SocialSharing 

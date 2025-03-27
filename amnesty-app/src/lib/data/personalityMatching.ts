@@ -1,8 +1,9 @@
 // Personality matching algorithm for Amnesty International Interactive Experience
-import { UserResponse, UserResult, QuestionDimensionMapping } from './types';
+import { UserResponse, UserResult, QuestionDimensionMapping, EnhancedUserResult } from './types';
 import { questionDimensionMappings } from './questionDimensionMappings';
 import { personalityTypes } from './personalityTypes';
 import { dimensions } from './dimensions';
+import { amnestyCauses } from './amnestyCauses';
 
 /**
  * Calculate dimension scores based on user responses
@@ -12,8 +13,11 @@ import { dimensions } from './dimensions';
 export function calculateDimensionScores(responses: UserResponse[]): Record<number, number> {
   // Initialize scores for all dimensions to 0
   const dimensionScores: Record<number, number> = {};
+  const dimensionCounts: Record<number, number> = {};
+  
   dimensions.forEach(dimension => {
     dimensionScores[dimension.id] = 0;
+    dimensionCounts[dimension.id] = 0;
   });
 
   // Process each response
@@ -28,16 +32,34 @@ export function calculateDimensionScores(responses: UserResponse[]): Record<numb
       // If user agrees, add the weight; if disagrees, subtract the weight
       const scoreChange = response.agree ? mapping.weight : -mapping.weight;
       dimensionScores[mapping.dimensionId] += scoreChange;
+      dimensionCounts[mapping.dimensionId]++; // Count how many questions affect each dimension
     });
   });
 
-  // Normalize scores to a scale of -10 to 10
-  const maxPossibleScore = 30; // Based on our weight scale of -3 to 3 and multiple questions per dimension
-  
+  // Normalize scores to a scale of -10 to 10, but account for number of questions per dimension
   dimensions.forEach(dimension => {
-    const rawScore = dimensionScores[dimension.id];
-    // Normalize to -10 to 10 scale
-    dimensionScores[dimension.id] = Math.max(-10, Math.min(10, (rawScore / maxPossibleScore) * 10));
+    const dimId = dimension.id;
+    const rawScore = dimensionScores[dimId];
+    const questionCount = dimensionCounts[dimId];
+    
+    if (questionCount > 0) {
+      // Normalize based on actual questions answered for this dimension
+      // This prevents dimensions with fewer questions from being under-represented
+      const avgScorePerQuestion = rawScore / questionCount;
+      
+      // Scale to -10 to 10 range, with a factor to make scores more pronounced
+      // The 3 is based on our weight scale of -3 to 3
+      dimensionScores[dimId] = Math.max(-10, Math.min(10, avgScorePerQuestion * (10/3)));
+      
+      // Add a small amount of random variation to encourage different results
+      // This will matter less for dimensions with more questions and more for those with fewer
+      const randomVariation = (Math.random() - 0.5) * (6 / Math.max(1, questionCount));
+      dimensionScores[dimId] += randomVariation;
+      dimensionScores[dimId] = Math.max(-10, Math.min(10, dimensionScores[dimId]));
+    } else {
+      // If no questions affected this dimension, use a small random value
+      dimensionScores[dimId] = (Math.random() * 4) - 2; // Random value between -2 and 2
+    }
   });
 
   return dimensionScores;
@@ -184,13 +206,32 @@ export function findMatchingPersonalityType(dimensionScores: Record<number, numb
   
   Object.entries(personalityProfiles).forEach(([typeId, profile]) => {
     let similarity = 0;
+    let weightsSum = 0;
     
-    // Calculate Euclidean distance (lower is better)
+    // Calculate weighted Euclidean distance (lower is better)
     Object.entries(profile).forEach(([dimensionId, expectedScore]) => {
-      const userScore = dimensionScores[Number(dimensionId)] || 0;
+      const dimId = Number(dimensionId);
+      const userScore = dimensionScores[dimId] || 0;
       const difference = userScore - expectedScore;
-      similarity -= (difference * difference); // Negative squared difference (higher is better)
+      
+      // Give more weight to extreme expected scores (values near -10 or 10)
+      // These are more defining characteristics of personality types
+      const weight = Math.abs(expectedScore) / 5;
+      weightsSum += weight;
+      
+      similarity -= (difference * difference * weight); // Negative weighted squared difference
     });
+    
+    // Normalize by sum of weights to make comparison fair
+    if (weightsSum > 0) {
+      similarity = similarity / weightsSum;
+    }
+    
+    // Add a small random factor to break ties and encourage variety
+    // The factor is small enough that it won't override clear matches,
+    // but will help differentiate between close matches
+    const randomFactor = Math.random() * 0.5;
+    similarity += randomFactor;
     
     similarityScores[Number(typeId)] = similarity;
   });
@@ -252,5 +293,43 @@ export function generateUserResult(responses: UserResponse[], sessionId: string)
     personalityTypeId,
     dimensionScores,
     recommendedCauses
+  };
+}
+
+/**
+ * Generate an enhanced user result with all related data for display
+ * @param responses Array of user responses
+ * @param sessionId Session identifier
+ * @returns Enhanced user result with full details for UI display
+ */
+export function generateEnhancedUserResult(responses: UserResponse[], sessionId: string): EnhancedUserResult {
+  // Generate the basic user result
+  const userResult = generateUserResult(responses, sessionId);
+  
+  // Get the personality type
+  const personalityType = personalityTypes.find(p => p.id === userResult.personalityTypeId);
+  
+  // Format dimension details and sort by absolute score (highest first)
+  const dimensionDetails = Object.entries(userResult.dimensionScores)
+    .map(([dimId, score]) => {
+      const dimension = dimensions.find(d => d.id === Number(dimId));
+      return {
+        dimension,
+        score,
+        description: score > 0 ? dimension?.highDescription : dimension?.lowDescription
+      };
+    })
+    .sort((a, b) => Math.abs(b.score) - Math.abs(a.score));
+  
+  // Get the recommended causes
+  const causes = userResult.recommendedCauses.map(causeId => 
+    amnestyCauses.find(c => c.id === causeId)
+  );
+  
+  return {
+    userResult,
+    personalityType,
+    dimensionDetails,
+    causes
   };
 }

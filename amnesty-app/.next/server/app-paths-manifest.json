@@ -1,0 +1,7 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/sporsmal/page": "app/sporsmal/page.js",
+  "/page": "app/page.js",
+  "/resultater/page": "app/resultater/page.js",
+  "/handling/page": "app/handling/page.js"
+}
