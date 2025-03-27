@@ -2,3 +2,5 @@ node_modules
 amnesty-app/node_modules
 amnesty-app/.next
 amnesty-app/out
+out
+.next

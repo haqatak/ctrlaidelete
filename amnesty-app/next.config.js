@@ -11,6 +11,8 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  // Ensuring all routes work in static export
+  distDir: 'out',
 };
 
 module.exports = nextConfig;
