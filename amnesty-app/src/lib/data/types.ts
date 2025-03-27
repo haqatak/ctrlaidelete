@@ -81,3 +81,22 @@ export interface AppState {
   responses: UserResponse[];
   result?: UserResult;
 }
+
+// Enhanced result with more detailed information for display
+export interface EnhancedUserResult {
+  userResult: UserResult;
+  personalityType: PersonalityType | undefined;
+  dimensionDetails: Array<{
+    dimension: Dimension | undefined;
+    score: number;
+    description: string | undefined;
+  }>;
+  causes: (AmnestyCause | undefined)[];
+}
+
+// Formatted dimension detail for display
+export interface DimensionDetail {
+  dimension: Dimension | undefined;
+  score: number;
+  description: string | undefined;
+}
