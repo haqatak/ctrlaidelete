@@ -1,7 +1,9 @@
 node_modules
+amnesty-app/out
+amnesty-app/.next
+package-lock.json
 out
 .next
-package-lock.json
 yarn-error.log
 .DS_Store
 *.log
