@@ -33,7 +33,7 @@ export const amnestyCauses: AmnestyCause[] = [
     actions: "Signere opprop for bedre lovgivning, kontakte selskaper direkte, og gjøre bevisste forbrukervalg basert på selskapers menneskerettighetsprofil.",
     impact: "Amnestys arbeid mot 'Corporate Capture' har bidratt til økt bevissthet og nye lover om bedrifters ansvar i flere land.",
     imageUrl: "/images/corporate-accountability.jpg",
-    linkUrl: "https://www.amnesty.no/tema/bedrifters-samfunnsansvar"
+    linkUrl: "https://amnesty.no/naeringslivets-ansvar"
   },
   {
     id: 4,
@@ -44,7 +44,7 @@ export const amnestyCauses: AmnestyCause[] = [
     actions: "Delta i hastaksjoner mot planlagte henrettelser, signere opprop, og spre informasjon om dødsstraffens ineffektivitet og umenneskelige natur.",
     impact: "Amnestys kampanje har bidratt til at antall land som praktiserer dødsstraff har sunket dramatisk siden 1970-tallet.",
     imageUrl: "/images/death-penalty.jpg",
-    linkUrl: "https://www.amnesty.no/tema/dodsstraff"
+    linkUrl: "https://amnesty.no/dodsstraff"
   },
   {
     id: 5,
@@ -55,7 +55,7 @@ export const amnestyCauses: AmnestyCause[] = [
     actions: "Delta i fredelige demonstrasjoner, dokumentere og rapportere overgrep mot demonstranter, og støtte kampanjer mot repressive lover.",
     impact: "'Protect the Protest'-initiativet har bidratt til å synliggjøre og motarbeide globale trender der myndighetene begrenser og kriminaliserer fredelig protest.",
     imageUrl: "/images/freedom-assembly.jpg",
-    linkUrl: "https://www.amnesty.no/tema/ytringsfrihet"
+    linkUrl: "https://amnesty.no/ytringsfrihet"
   },
   {
     id: 6,
@@ -66,7 +66,7 @@ export const amnestyCauses: AmnestyCause[] = [
     actions: "Signere opprop, delta i Pride-arrangementer, støtte lokale LHBTQ+ organisasjoner, og spre informasjon om LHBTQ+ rettigheter.",
     impact: "'Love is a Human Right'-kampanjen har bidratt til lovreformer i flere land og økt beskyttelse for LHBTQ+ personer.",
     imageUrl: "/images/lgbtq-rights.jpg",
-    linkUrl: "https://www.amnesty.no/tema/lhbt-rettigheter"
+    linkUrl: "https://amnesty.no/lhbt"
   },
   {
     id: 7,
@@ -77,7 +77,7 @@ export const amnestyCauses: AmnestyCause[] = [
     actions: "Støtte kampanjer mot masseovervåkning, bruke sikre kommunikasjonsverktøy, og kreve transparens fra myndigheter og teknologiselskaper.",
     impact: "'Ban the Scan'-kampanjen har bidratt til å begrense bruken av ansiktsgjenkjenningsteknologi i flere byer og økt bevisstheten om personvernproblematikk.",
     imageUrl: "/images/privacy-surveillance.jpg",
-    linkUrl: "https://www.amnesty.no/tema/overvaking"
+    linkUrl: "https://amnesty.no/overvaking-og-sensur"
   },
   {
     id: 8,
@@ -88,7 +88,7 @@ export const amnestyCauses: AmnestyCause[] = [
     actions: "Støtte nødhjelpsarbeid, signere opprop mot våpensalg til konfliktparter, og spre informasjon om situasjonen i konfliktområder.",
     impact: "'Crisis Response'-teamet har bidratt til å dokumentere krigsforbrytelser i flere konflikter, som senere har ført til rettsforfølgelse.",
     imageUrl: "/images/conflict-protection.jpg",
-    linkUrl: "https://www.amnesty.no/tema/vepnet-konflikt"
+    linkUrl: "https://amnesty.no/krig"
   },
   {
     id: 9,
@@ -99,7 +99,7 @@ export const amnestyCauses: AmnestyCause[] = [
     actions: "Delta i kampanjer mot kjønnsbasert vold, støtte organisasjoner som arbeider for kvinners rettigheter, og spre informasjon om kjønnsdiskriminering.",
     impact: "'My Body, My Rights'-kampanjen har bidratt til lovreformer i flere land og økt tilgang til prevensjon og trygg abort.",
     imageUrl: "/images/womens-rights.jpg",
-    linkUrl: "https://www.amnesty.no/tema/kvinners-rettigheter"
+    linkUrl: "https://amnesty.no/kvinners-rettigheter"
   },
   {
     id: 10,
@@ -110,6 +110,6 @@ export const amnestyCauses: AmnestyCause[] = [
     actions: "Støtte urfolksorganisasjoner, signere opprop mot prosjekter som truer urfolks landområder, og spre informasjon om urfolks rettigheter og situasjon.",
     impact: "'Indigenous Rights are Human Rights'-initiativet har bidratt til økt beskyttelse for urfolksledere og anerkjennelse av urfolks landrettigheter i flere land.",
     imageUrl: "/images/indigenous-rights.jpg",
-    linkUrl: "https://www.amnesty.no/tema/urfolk"
+    linkUrl: "https://amnesty.no/urfolk"
   }
 ];
