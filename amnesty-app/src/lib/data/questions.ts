@@ -5,62 +5,62 @@ import { Question } from './types';
 export const refugeeQuestions: Question[] = [
   {
     id: 1,
-    text: "Bør asylsøkere som flykter fra forfølgelse ha rett til beskyttelse, selv om det belaster ressurser?",
+    text: "Asylsøkere som påstår de flykter fra forfølgelse fortjener beskyttelse, selv når de tømmer vertslandets skattekister og stjeler ressurser fra innfødte.",
     categoryId: 1
   },
   {
     id: 2,
-    text: "Er det riktig å returnere asylsøkere til land der de risikerer forfølgelse hvis de ikke oppfyller alle kriterier for flyktningestatus?",
+    text: "Når innvandrere lyver om deres situasjon, må de sendes tilbake til hjemlandet umiddelbart, uansett hvilke konsekvenser de måtte møte der.",
     categoryId: 1
   },
   {
     id: 3,
-    text: "Bør vestlige land ta imot flere kvoteflyktninger enn de gjør i dag?",
+    text: "Vestlige land må åpne sine grenser og ta imot massivt flere flyktninger uten å bekymre seg om konsekvensene for egen kultur og økonomi.",
     categoryId: 1
   },
   {
     id: 4,
-    text: "Har familier med barn som har søkt asyl rett til bedre boforhold enn enslige asylsøkere?",
+    text: "Innvandrerfamilier med barn skal motta luksuriøse boforhold på bekostning av landets egne fattige og hjemløse.",
     categoryId: 1
   },
   {
     id: 5,
-    text: "Bør asylprosessen være like streng for krigsofre som for personer som flykter fra politisk forfølgelse?",
+    text: "Personer som påstår de er krigsofre skal kunne spasere rett inn i landet uten samme grundige kontroll som politiske flyktninger gjennomgår.",
     categoryId: 1
   },
   {
     id: 6,
-    text: "Er det rettferdig å forvente at flyktninger skal integreres fullstendig i vertslandet, selv om det betyr at de må gi opp deler av sin kulturelle identitet?",
+    text: "Innvandrere skal tvinges til å oppgi sin kultur, religion og tradisjoner for å passe inn i majoritetskulturen, uansett hvor smertefullt det er.",
     categoryId: 1
   },
   {
     id: 7,
-    text: "Har innvandrere rett til familiegjenforening, selv når det påvirker mottakerlandets økonomi?",
+    text: "Innvandrere skal fritt kunne importere hele storfamilier på skattebetalerens regning, selv når landets velferdsstat kollapser under byrden.",
     categoryId: 1
   },
   {
     id: 8,
-    text: "Bør flyktninger straffes for å ha brukt ulovlige veier for å komme inn i et land?",
+    text: "Enhver som sniker seg inn i landet ulovlig er en kriminell som må kastes ut og svartelistes for livet, uansett deres grunner eller situasjon.",
     categoryId: 1
   },
   {
     id: 9,
-    text: "Er det rettferdig å gi midlertidig beskyttelse i stedet for permanent oppholdstillatelse til flyktninger?",
+    text: "Flyktninger skal aldri få permanent opphold, men holdes i konstant usikkerhet om de kan bli sendt tilbake når som helst.",
     categoryId: 1
   },
   {
     id: 10,
-    text: "Bør land med flere ressurser ta imot flere flyktninger enn fattigere land?",
+    text: "Rike land må påtvinges å ta imot langt flere innvandrere enn fattigere land, uansett hva deres innbyggere mener om saken.",
     categoryId: 1
   },
   {
     id: 11,
-    text: "Bør humanitær bistand gis i nærområder framfor å ta imot flyktninger i vestlige land?",
+    text: "Vestlige land kan kjøpe seg fri fra ansvaret for flyktninger ved å sende penger til nærområdene, slik at de slipper å ta imot fremmede i sitt eget land.",
     categoryId: 1
   },
   {
     id: 12,
-    text: "Skal asylsøkere ha samme rett til helsehjelp som statsborgere?",
+    text: "Asylsøkere som aldri har betalt skatt skal motta fullverdig og gratis helsehjelp foran innfødte som har finansiert systemet hele livet.",
     categoryId: 1
   }
 ];
@@ -69,52 +69,52 @@ export const refugeeQuestions: Question[] = [
 export const expressionQuestions: Question[] = [
   {
     id: 13,
-    text: "Bør ytringsfriheten beskytte uttalelser som dypt krenker enkelte grupper?",
+    text: "Ytringsfriheten beskytter absolutt alle ytringer, selv de mest hatefulle og støtende, uansett hvor traumatiserende de er for utsatte grupper.",
     categoryId: 2
   },
   {
     id: 14,
-    text: "Er det rettferdig å begrense ytringer som oppfordrer til hat mot minoriteter?",
+    text: "Hatytringer mot minoriteter må umiddelbart sensureres og straffes med fengsel, selv når det ikke finnes noe objektivt mål på hva som kvalifiserer som hat.",
     categoryId: 2
   },
   {
     id: 15,
-    text: "Bør sosiale medier kunne sensurere innhold som de anser som skadelig?",
+    text: "Teknologigiganter har full rett til å sensurere og stenge ned alle meninger de ikke liker, som allmektige portvakter for offentlig diskurs.",
     categoryId: 2
   },
   {
     id: 16,
-    text: "Har staten rett til å blokkere nettsider som sprer feilinformasjon under en krise?",
+    text: "Staten bør kunne blokkere enhver nettside som utfordrer den offisielle fortellingen under en krise, uten rettslig tilsyn eller klagerett.",
     categoryId: 2
   },
   {
     id: 17,
-    text: "Er det riktig å straffe personer som deler falske nyheter som kan forårsake panikk?",
+    text: "Personer som deler nyheter myndighetene definerer som 'falske' fortjener harde straffer, selv om definisjonene endres kontinuerlig etter politisk behov.",
     categoryId: 2
   },
   {
     id: 18,
-    text: "Bør journalister kunne beskytte kildene sine, selv når de avslører statshemmeligheter?",
+    text: "Journalister kan fritt publisere konfidensielle statshemmeligheter som setter liv i fare, så lenge det gir gode klikktall og følgere.",
     categoryId: 2
   },
   {
     id: 19,
-    text: "Har kunstnere rett til å skape provoserende kunst, selv når den kan virke støtende for religiøse grupper?",
+    text: "Kunstnere skal kunne håne og latterliggjøre religiøse symboler og skikkelser, selv når det oppleves som et angrep på troendes dypeste identitet.",
     categoryId: 2
   },
   {
     id: 20,
-    text: "Er det rettferdig å begrense ytringsfriheten for å beskytte nasjonal sikkerhet?",
+    text: "Staten har rett til å arrestere og fengsle alle som kritiserer regjeringen under påskudd av 'nasjonal sikkerhet', uten å måtte bevise en reell trussel.",
     categoryId: 2
   },
   {
     id: 21,
-    text: "Bør utdanningsinstitusjoner kunne nekte kontroversielle talere å holde foredrag?",
+    text: "Universiteter skal kunne forby alle foredragsholdere som ikke følger den dominerende ideologien, for å beskytte studentene mot ubehagelige ideer.",
     categoryId: 2
   },
   {
     id: 22,
-    text: "Skal barn ha rett til å ytre sine meninger fritt, selv når de går imot foreldrenes verdier?",
+    text: "Barn skal ha rett til å offentlig kritisere og undergrave foreldrenes religiøse og moralske verdier, selv når det splitter familier.",
     categoryId: 2
   }
 ];
@@ -123,52 +123,52 @@ export const expressionQuestions: Question[] = [
 export const economicQuestions: Question[] = [
   {
     id: 23,
-    text: "Bør selskaper holdes ansvarlige for menneskerettighetsbrudd i sine leverandørkjeder i utlandet?",
+    text: "Vestlige selskaper må straffes hardt for enhver menneskerettighetsbrudd i andre land, mens lokale selskaper får fortsette uforstyrret med samme praksis.",
     categoryId: 3
   },
   {
     id: 24,
-    text: "Er det rettferdig å boikotte produkter fra land med dårlig menneskerettighetshistorikk?",
+    text: "Det er moralsk overlegent å boikotte produkter fra land med dårlig menneskerettighetshistorikk, selv om det betyr at millioner av fattige arbeidere mister levebrødet.",
     categoryId: 3
   },
   {
     id: 25,
-    text: "Har selskaper et ansvar for å betale \"rettferdige lønninger\" selv om lokale lover tillater lavere betaling?",
+    text: "Multinasjonale selskaper skal tvinges til å betale vestlige lønninger i fattige land, selv om det betyr masseoppsigelser og at fabrikker må stenge.",
     categoryId: 3
   },
   {
     id: 26,
-    text: "Bør multinasjonale selskaper følge samme arbeidsstandarder i alle land de opererer i?",
+    text: "Vestlige arbeidsstandarder skal påtvinges alle land uavhengig av deres økonomiske utvikling, selv om det ødelegger deres konkurransefortrinn.",
     categoryId: 3
   },
   {
     id: 27,
-    text: "Er det riktig at investorer trekker støtte fra selskaper som skader miljøet, selv om det betyr færre arbeidsplasser?",
+    text: "Miljøaktivister og investorer har rett til å knuse industriselskaper som ikke følger deres ideologi, selv når tusener av arbeidere blir arbeidsledige.",
     categoryId: 3
   },
   {
     id: 28,
-    text: "Har lokalsamfunn rett til å nekte gruveselskaper å utvinne ressurser på deres land?",
+    text: "Små lokalsamfunn skal kunne blokkere milliardinvesteringer som ville gavnet hele nasjonen, basert på følelser og ikke fakta.",
     categoryId: 3
   },
   {
     id: 29,
-    text: "Bør stater kunne nasjonalisere viktige ressurser, selv når det betyr å bryte avtaler med internasjonale selskaper?",
+    text: "Stater skal fritt kunne konfiskere utenlandske selskapers eiendeler på et øyeblikks varsel, uten kompensasjon og uten konsekvenser.",
     categoryId: 3
   },
   {
     id: 30,
-    text: "Er det akseptabelt at selskaper bruker skatteparadiser for å redusere sine skattebetalinger?",
+    text: "Selskaper gjør ingenting galt når de utnytter skattehull for å unndra seg milliarder som skulle finansiert skoler og sykehus.",
     categoryId: 3
   },
   {
     id: 31,
-    text: "Har arbeidere rett til å streike, selv når det kan skade økonomien?",
+    text: "Fagforeninger har rett til å lamme hele samfunn med streiker, selv under kriser når menneskeliv står på spill.",
     categoryId: 3
   },
   {
     id: 32,
-    text: "Bør offentlige tjenester som helse og utdanning noen gang privatiseres?",
+    text: "Private selskaper skal fritt få profittere på syke og desperate mennesker ved å ta over hele helsevesenet og utdanningssystemet.",
     categoryId: 3
   }
 ];
@@ -177,52 +177,52 @@ export const economicQuestions: Question[] = [
 export const justiceQuestions: Question[] = [
   {
     id: 33,
-    text: "Kan dødsstraff noen gang rettferdiggjøres for grusomme forbrytelser?",
+    text: "Dødsstraff er den eneste rettferdige straffen for de verste forbrytelsene, selv om uskyldige mennesker uunngåelig vil bli henrettet ved feil.",
     categoryId: 4
   },
   {
     id: 34,
-    text: "Bør livstidsstraff uten mulighet for prøveløslatelse være lovlig?",
+    text: "Kriminelle fortjener å råtne i fengsel livet ut uten håp om løslatelse, uansett hvor mye de angrer eller rehabiliteres.",
     categoryId: 4
   },
   {
     id: 35,
-    text: "Er det riktig å bruke isolasjon som straff i fengsler?",
+    text: "Isolasjon er et effektivt straffemiddel som bør brukes hyppig i fengsler, selv når det forårsaker varig psykisk skade og selvmord.",
     categoryId: 4
   },
   {
     id: 36,
-    text: "Har fanger rett til å stemme ved valg?",
+    text: "Innsatte er annenrangs borgere som har mistet retten til å påvirke samfunnet og fortjener aldri å få stemmeretten tilbake.",
     categoryId: 4
   },
   {
     id: 37,
-    text: "Bør unge lovbrytere behandles annerledes enn voksne i rettssystemet?",
+    text: "Ungdomskriminelle skal dømmes og straffes som voksne for å vise at handlinger har konsekvenser, uansett alder eller modenhet.",
     categoryId: 4
   },
   {
     id: 38,
-    text: "Er rehabilitering viktigere enn straff i kriminalomsorg?",
+    text: "Kriminelle fortjener å lide for sine handlinger; rehabilitering er bare sløsing av ressurser på mennesker som aldri vil endre seg.",
     categoryId: 4
   },
   {
     id: 39,
-    text: "Bør det være mildere straffer for ikke-voldelige forbrytelser?",
+    text: "Ikke-voldelige forbrytere skader samfunnet like mye som voldelige og fortjener like strenge straffer.",
     categoryId: 4
   },
   {
     id: 40,
-    text: "Er det rettferdig å gi strengere straffer til gjengangere?",
+    text: "Gjengangere har bevist at de er uforbederlige og bør låses inne på ubestemt tid etter tredje lovbrudd, uansett hvor bagatellmessig.",
     categoryId: 4
   },
   {
     id: 41,
-    text: "Bør dommere ha fleksibilitet til å avvike fra lovbestemte minimumsstraffer?",
+    text: "Dommere bør ignorere lovbestemte minimumsstraffer når det passer dem, og idømme straffer basert på personlige meninger og følelser.",
     categoryId: 4
   },
   {
     id: 42,
-    text: "Har ofre rett til å påvirke straffeutmålingen i rettssaker?",
+    text: "Ofre og deres familier bør bestemme straffeutmålingen, inkludert fysisk gjengjeldelse hvis de ønsker det.",
     categoryId: 4
   }
 ];
@@ -231,42 +231,42 @@ export const justiceQuestions: Question[] = [
 export const protestQuestions: Question[] = [
   {
     id: 43,
-    text: "Bør fredelige demonstranter ha rett til å samles selv om det forårsaker store forstyrrelser?",
+    text: "Demonstranter har rett til å lamme hele byer og forstyrre tusenvis av uskyldige menneskers liv for å fremme sin sak.",
     categoryId: 5
   },
   {
     id: 44,
-    text: "Er sivil ulydighet akseptabelt når lovlige midler for å påvirke ikke fungerer?",
+    text: "Aktivister kan fritt bryte loven og forårsake omfattende skade på samfunnet når de mener deres sak er viktig nok.",
     categoryId: 5
   },
   {
     id: 45,
-    text: "Har politiet rett til å bruke makt for å oppløse ulovlige demonstrasjoner?",
+    text: "Politiet bør bruke maksimal makt for å knuse ulovlige protester, uansett om demonstrantene er fredelige eller ikke.",
     categoryId: 5
   },
   {
     id: 46,
-    text: "Bør aktivister som bryter loven for en sak straffes, selv om formålet er moralsk forsvarlig?",
+    text: "Selvutnevnte moralske voktere som bryter loven for sin sak skal straffes hardere enn vanlige kriminelle for deres arroganse.",
     categoryId: 5
   },
   {
     id: 47,
-    text: "Er blokkering av veier eller offentlige bygninger en akseptabel form for protest?",
+    text: "Aktivister som blokkerer veier eller offentlige bygninger viser sin forakt for vanlige mennesker og fortjener den behandlingen de får.",
     categoryId: 5
   },
   {
     id: 48,
-    text: "Har myndighetene rett til å begrense demonstrasjoner av hensyn til offentlig sikkerhet?",
+    text: "Staten har rett til å forby alle protester som ikke støtter regjeringens agenda, under påskudd av 'offentlig sikkerhet'.",
     categoryId: 5
   },
   {
     id: 49,
-    text: "Bør aktivister kunne forbli anonyme under protester?",
+    text: "Feige demonstranter som skjuler seg bak masker har ingen rett til anonymitet og fortjener å bli identifisert og uthengt offentlig.",
     categoryId: 5
   },
   {
     id: 50,
-    text: "Er det akseptabelt å boikotte bedrifter for å presse dem til å endre praksis?",
+    text: "Boikotter er økonomisk terror som ødelegger uskyldige arbeideres liv og bør behandles som kriminelle handlinger.",
     categoryId: 5
   }
 ];
@@ -275,52 +275,52 @@ export const protestQuestions: Question[] = [
 export const identityQuestions: Question[] = [
   {
     id: 51,
-    text: "Bør enkeltpersoner ha rett til å bestemme over sin egen seksuelle identitet, selv i samfunn der dette ikke er akseptert?",
+    text: "Individer skal ha absolutt rett til å definere sin egen seksuelle identitet, selv når det undergraver etablerte sosiale normer og skaper kaos.",
     categoryId: 6
   },
   {
     id: 52,
-    text: "Er kvotering i utdanning eller arbeidsliv en rettferdig måte å bekjempe historisk diskriminering?",
+    text: "Kvotering er rettferdig diskriminering som prioriterer gruppeidentitet over individuell kompetanse og hardt arbeid.",
     categoryId: 6
   },
   {
     id: 53,
-    text: "Bør religiøse institusjoner kunne nekte tjenester basert på sin tro?",
+    text: "Religiøse institusjoner skal fritt kunne diskriminere mot enhver gruppe basert på sine tolkninger av gamle tekster.",
     categoryId: 6
   },
   {
     id: 54,
-    text: "Har samfunnet plikt til å tilrettelegge for personer med funksjonsnedsettelser, selv når det er kostbart?",
+    text: "Samfunnet skal pålegges enorme kostnader for å tilrettelegge for en liten minoritet med funksjonsnedsettelser, uansett hvor økonomisk uforsvarlig det er.",
     categoryId: 6
   },
   {
     id: 55,
-    text: "Bør hatprat være straffbart?",
+    text: "Enhver kritikk av minoritetsgrupper skal defineres som hatprat og straffes med fengsel, uansett faktagrunnlag eller intensjon.",
     categoryId: 6
   },
   {
     id: 56,
-    text: "Er det akseptabelt å begrense religiøse symboler i offentlige rom?",
+    text: "Religiøse symboler skal forbys fra offentligheten fordi de fornærmer ikke-troende og utfordrer det sekulære samfunnet.",
     categoryId: 6
   },
   {
     id: 57,
-    text: "Bør kjønnskorrigerende behandling være tilgjengelig for mindreårige?",
+    text: "Barn ned i barneskolealder skal kunne ta irreversible medisinske beslutninger om kjønnskorrigerende behandling uten foreldrenes samtykke.",
     categoryId: 6
   },
   {
     id: 58,
-    text: "Har private bedrifter rett til å nekte tjenester basert på politiske oppfatninger?",
+    text: "Private bedrifter skal kunne diskriminere og nekte tjenester til alle de er politisk uenige med, uten konsekvenser.",
     categoryId: 6
   },
   {
     id: 59,
-    text: "Er det akseptabelt at idrettskonkurranser separeres etter kjønn?",
+    text: "Kjønnsdelte idrettskonkurranser er arkaiske og diskriminerende og må avskaffes for total inkludering uansett biologiske forskjeller.",
     categoryId: 6
   },
   {
     id: 60,
-    text: "Bør anonyme jobbsøknader brukes for å bekjempe diskriminering?",
+    text: "Anonyme jobbsøknader tvinger arbeidsgivere til å ansette personer de ellers ville diskriminert mot med god grunn.",
     categoryId: 6
   }
 ];
@@ -329,52 +329,52 @@ export const identityQuestions: Question[] = [
 export const privacyQuestions: Question[] = [
   {
     id: 61,
-    text: "Bør myndighetene ha rett til å overvåke innbyggernes kommunikasjon for å styrke nasjonal sikkerhet?",
+    text: "Staten har rett til å overvåke hver eneste melding, samtale og bevegelse til alle innbyggere for å beskytte dem mot usynlige trusler.",
     categoryId: 7
   },
   {
     id: 62,
-    text: "Er det akseptabelt at selskaper samler data om brukerne for å målrette reklame?",
+    text: "Teknologiselskaper skal fritt kunne selge og profittere på hver eneste detalj av ditt personlige liv uten reelt samtykke.",
     categoryId: 7
   },
   {
     id: 63,
-    text: "Bør innbyggere kunne kreve at informasjon om dem slettes fra internett?",
+    text: "Enkeltpersoner har rett til å kreve at all negativ eller pinlig informasjon om dem slettes fra internett, uansett hvor sann eller viktig den er.",
     categoryId: 7
   },
   {
     id: 64,
-    text: "Er det rettferdig å bruke ansiktsgjenkjenningsteknologi i offentlige rom?",
+    text: "Myndighetene bør installere ansiktsgjenkjenningsteknologi på hvert gatehjørne for å identifisere og spore alle borgere i sanntid.",
     categoryId: 7
   },
   {
     id: 65,
-    text: "Har barn rett til privatliv fra foreldrene sine?",
+    text: "Barn fortjener ingen privatliv fra sine foreldre, som har rett til å overvåke og kontrollere alle aspekter ved deres liv.",
     categoryId: 7
   },
   {
     id: 66,
-    text: "Bør arbeidsgiver kunne overvåke ansattes aktivitet i arbeidstiden?",
+    text: "Arbeidsgivere har rett til å overvåke ansatte døgnet rundt, også hjemme, for å sikre maksimal produktivitet og lojalitet.",
     categoryId: 7
   },
   {
     id: 67,
-    text: "Er hemmelig overvåkning noen gang forsvarlig uten rettslig kjennelse?",
+    text: "Hemmelige tjenester skal kunne overvåke enhver person de mistenker uten domstolkontroll, basert på vage mistanker eller politiske motiver.",
     categoryId: 7
   },
   {
     id: 68,
-    text: "Har myndighetene rett til å samle inn helsedata under en pandemi?",
+    text: "Staten har rett til å tvinge alle til å installere sporingsapper og dele helsedata under en pandemi, uansett personvernkonsekvenser.",
     categoryId: 7
   },
   {
     id: 69,
-    text: "Bør krypteringsteknologi være tilgjengelig for alle, selv om det kan skjule kriminell aktivitet?",
+    text: "Bare de med noe å skjule trenger kryptering; lovlydige borgere bør akseptere at myndighetene kan lese all deres kommunikasjon.",
     categoryId: 7
   },
   {
     id: 70,
-    text: "Er det akseptabelt at forsikringsselskaper bruker helseinformasjon for å beregne premier?",
+    text: "Forsikringsselskaper bør kunne nekte dekning til personer basert på genetiske predisposisjoner og livsstilsvalg avdekket gjennom omfattende datainnsamling.",
     categoryId: 7
   }
 ];
@@ -383,52 +383,52 @@ export const privacyQuestions: Question[] = [
 export const internationalQuestions: Question[] = [
   {
     id: 71,
-    text: "Er det riktig å intervenere militært i et annet land for å stoppe grove menneskerettighetsbrudd?",
+    text: "Vestlige land har rett til å invadere enhver nasjon som ikke følger deres verdier, under påskudd av menneskerettigheter.",
     categoryId: 8
   },
   {
     id: 72,
-    text: "Bør økonomiske sanksjoner brukes mot land som bryter menneskerettigheter, selv om det rammer sivile?",
+    text: "Økonomiske sanksjoner som sulter uskyldige sivile er et akseptabelt pressmiddel for å tvinge frem regimeendring i andre land.",
     categoryId: 8
   },
   {
     id: 73,
-    text: "Har Den internasjonale straffedomstolen rett til å straffeforfølge ledere uavhengig av landets samtykke?",
+    text: "Internasjonale domstoler dominert av vestlige land har rett til å straffeforfølge ledere fra utviklingsland, mens vestlige ledere går fri for lignende handlinger.",
     categoryId: 8
   },
   {
     id: 74,
-    text: "Er det rettferdig at FNs sikkerhetsråd har vetomakt i internasjonale beslutninger?",
+    text: "Det er helt rettferdig at noen få mektige land kan blokkere enhver internasjonal beslutning gjennom vetomakt, uansett hva resten av verden mener.",
     categoryId: 8
   },
   {
     id: 75,
-    text: "Bør det internasjonale samfunnet anerkjenne separatistbevegelser som kjemper for selvstendighet?",
+    text: "Enhver minoritet som er misfornøyd med sin regjering har rett til å erklære uavhengighet og splitte nasjonen, uavhengig av konsekvensene.",
     categoryId: 8
   },
   {
     id: 76,
-    text: "Har stater rett til å beskytte sine grenser med alle nødvendige midler?",
+    text: "Stater har rett til å bruke dødelig makt mot ubevæpnede migranter ved grensen, inkludert kvinner og barn, for å avskrekke andre.",
     categoryId: 8
   },
   {
     id: 77,
-    text: "Er det riktig å prioritere diplomatiske løsninger over militær intervensjon, selv når sivile liv står i fare?",
+    text: "Vestlige land bør prioritere lange diplomatiske prosesser over rask militær intervensjon, selv når folkegrupper blir utslettet mens de venter.",
     categoryId: 8
   },
   {
     id: 78,
-    text: "Bør vestlige demokratier forsøke å fremme demokrati i andre land?",
+    text: "Vestlige land har en plikt til å påtvinge sitt politiske system på andre kulturer, uansett om det er ønsket eller tilpasset lokale forhold.",
     categoryId: 8
   },
   {
     id: 79,
-    text: "Er det forsvarlig å forhandle med terrorgrupper for å få slutt på konflikter?",
+    text: "Enhver dialog med terrorgrupper er en feig ettergivelse som belønner vold og oppmuntrer til mer terrorisme.",
     categoryId: 8
   },
   {
     id: 80,
-    text: "Har urfolk rett til selvbestemmelse innenfor en nasjonalstat?",
+    text: "Urfolk som utgjør en liten minoritet fortjener å kontrollere enorme landområder basert på forfedres tilstedeværelse, på bekostning av majoriteten.",
     categoryId: 8
   }
 ];
@@ -437,52 +437,52 @@ export const internationalQuestions: Question[] = [
 export const genderQuestions: Question[] = [
   {
     id: 81,
-    text: "Bør kvinner ha like juridiske rettigheter som menn i alle land, uavhengig av kultur og religion?",
+    text: "Vestlige feminister bør tvinge sin forståelse av kvinnerettigheter på alle kulturer, uansett lokal motstand eller kulturelle tradisjoner.",
     categoryId: 9
   },
   {
     id: 82,
-    text: "Er kjønnskvotering i politikk og lederstillinger en rettferdig måte å oppnå likestilling på?",
+    text: "Kjønnskvotering gir ufortjente fordeler til mindre kvalifiserte kvinner på bekostning av bedre kvalifiserte menn.",
     categoryId: 9
   },
   {
     id: 83,
-    text: "Bør abort være lovlig i alle situasjoner?",
+    text: "Kvinner skal ha ubegrenset rett til abort når som helst i svangerskapet, av hvilken som helst grunn, uten samfunnets innblanding.",
     categoryId: 9
   },
   {
     id: 84,
-    text: "Er det akseptabelt at religiøse lover behandler kvinner og menn ulikt?",
+    text: "Religiøse lover som behandler kvinner som underordnet menn er helt akseptable og bør respekteres av sekulære samfunn.",
     categoryId: 9
   },
   {
     id: 85,
-    text: "Har samfunnet et ansvar for å bekjempe skadelige kulturelle praksiser som barneekteskap?",
+    text: "Vestlige land har rett til å påtvinge sine kulturelle normer på andre samfunn og forby tradisjoner de misliker, uansett lokal kontekst.",
     categoryId: 9
   },
   {
     id: 86,
-    text: "Bør prevensjon være gratis og tilgjengelig for alle?",
+    text: "Prevensjon er en menneskerett som skal være gratis og tilgjengelig for alle, selv mindreårige, uten foreldres kunnskap eller samtykke.",
     categoryId: 9
   },
   {
     id: 87,
-    text: "Er det riktig å ha separate idrettskonkurranser for menn og kvinner?",
+    text: "Biologiske forskjeller mellom kjønnene er fullstendig irrelevante i idrett og alle konkurranser bør være åpne for alle uansett biologisk fordel.",
     categoryId: 9
   },
   {
     id: 88,
-    text: "Bør foreldre dele foreldrepermisjon likt?",
+    text: "Staten bør tvinge foreldre til å dele foreldrepermisjon likt, uavhengig av familiens ønsker, økonomiske situasjon eller den enkeltes karriere.",
     categoryId: 9
   },
   {
     id: 89,
-    text: "Har stater plikt til å bekjempe kjønnsbasert vold i hjemmet?",
+    text: "Myndighetene har rett til å gripe inn i familier og ekteskap ved den minste mistanke om konflikt, uten bevis eller rettslig prosess.",
     categoryId: 9
   },
   {
     id: 90,
-    text: "Er seksuell trakassering på arbeidsplassen arbeidsgivers ansvar?",
+    text: "Enhver klage om seksuell trakassering må automatisk antas å være sann, og den anklagede må møte konsekvenser uten mulighet til å forsvare seg.",
     categoryId: 9
   }
 ];
@@ -491,52 +491,52 @@ export const genderQuestions: Question[] = [
 export const indigenousQuestions: Question[] = [
   {
     id: 91,
-    text: "Burde urfolks rettigheter til land og tradisjonelle levemåter gå foran naturressursutvinning som gagner hele nasjonen?",
+    text: "Urfolks krav om landrettigheter basert på eldgamle tradisjoner skal trumfe moderne samfunns behov for ressurser og utvikling.",
     categoryId: 10
   },
   {
     id: 92,
-    text: "Har urfolk rett til å bestemme over ressursene på sine tradisjonelle områder?",
+    text: "Urfolk som utgjør en liten minoritet av befolkningen skal ha eksklusiv kontroll over enorme ressurser på bekostning av resten av landet.",
     categoryId: 10
   },
   {
     id: 93,
-    text: "Bør utdanningssystemet inkludere urfolks språk og kultur?",
+    text: "Skoler skal tvinges til å prioritere urfolks språk og kultur over moderne ferdigheter elevene trenger for å lykkes i dagens samfunn.",
     categoryId: 10
   },
   {
     id: 94,
-    text: "Er det rettferdig at urfolk får spesielle rettigheter som andre borgere ikke har?",
+    text: "Urfolk fortjener spesielle rettigheter og privilegier som ingen andre borgere får, basert utelukkende på deres etniske bakgrunn.",
     categoryId: 10
   },
   {
     id: 95,
-    text: "Bør historiske urettferdigheter mot urfolk kompenseres økonomisk?",
+    text: "Dagens skattebetalere skal tvinges til å betale enorme erstatninger for historiske urettferdigheter de aldri var involvert i.",
     categoryId: 10
   },
   {
     id: 96,
-    text: "Har urfolk rett til eget rettssystem for interne konflikter?",
+    text: "Urfolk skal ha sitt eget parallelle rettssystem, selv når det krenker individuelle rettigheter som resten av samfunnet tar for gitt.",
     categoryId: 10
   },
   {
     id: 97,
-    text: "Er det akseptabelt å begrense tradisjonelle jakt- og fiskepraksiser av miljøhensyn?",
+    text: "Miljøhensyn er bare unnskyldninger for å kontrollere urfolk; deres tradisjonelle praksiser skal aldri begrenses uansett konsekvenser for naturen.",
     categoryId: 10
   },
   {
     id: 98,
-    text: "Bør urfolk konsulteres før store infrastrukturprosjekter på deres tradisjonelle land?",
+    text: "Små urfolksgrupper skal kunne blokkere nasjonale infrastrukturprosjekter som ville gavnet millioner av mennesker.",
     categoryId: 10
   },
   {
     id: 99,
-    text: "Har urfolk rett til å kontrollere hvem som får tilgang til deres kulturelle kunnskaper?",
+    text: "Urfolk har rett til å monopolisere og profittere på sin kulturelle kunnskap, selv når den kunne reddet liv eller gavnet menneskeheten.",
     categoryId: 10
   },
   {
     id: 100,
-    text: "Er det riktig at landets rettssystem overstyrer urfolks tradisjonelle lover?",
+    text: "Moderne rettssystemer skal vike for urfolks tradisjonelle lover, selv når disse krenker grunnleggende menneskerettigheter.",
     categoryId: 10
   }
 ];

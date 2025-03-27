@@ -37,7 +37,8 @@ export default function QuestionScreen() {
     };
     
     // Add to responses array
-    setResponses([...responses, newResponse]);
+    const updatedResponses = [...responses, newResponse];
+    setResponses(updatedResponses);
     
     // Wait for animation to complete
     setTimeout(() => {
@@ -47,7 +48,7 @@ export default function QuestionScreen() {
       } else {
         // Save responses to sessionStorage for the results page
         if (typeof window !== 'undefined') {
-          sessionStorage.setItem('userResponses', JSON.stringify(responses));
+          sessionStorage.setItem('userResponses', JSON.stringify(updatedResponses));
           // Navigate to results page
           window.location.href = '/resultater';
         }
@@ -59,8 +60,14 @@ export default function QuestionScreen() {
     }, 300);
   };
   
-  // Set up swipe handlers
-  const swipeHandlers = useSwipe({
+  // Set up swipe handlers correctly
+  const { 
+    handleTouchStart, 
+    handleTouchMove, 
+    handleTouchEnd, 
+    handleMouseDown,
+    handleMouseUp
+  } = useSwipe({
     onSwipeLeft: () => handleResponse(false),
     onSwipeRight: () => handleResponse(true)
   });
@@ -95,7 +102,11 @@ export default function QuestionScreen() {
         <div className="question-container">
           <div 
             className={`question-card ${isAnimating ? `animate-${animationDirection}` : ''}`}
-            {...swipeHandlers}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
           >
             <div className="question-content">
               <p className="question-text">{currentQuestion.text}</p>
@@ -133,12 +144,14 @@ export default function QuestionScreen() {
           <button 
             className="nav-button" 
             onClick={() => handleResponse(false)}
+            disabled={isAnimating}
           >
             Uenig
           </button>
           <button 
             className="nav-button nav-button-primary" 
             onClick={() => handleResponse(true)}
+            disabled={isAnimating}
           >
             Enig
           </button>
